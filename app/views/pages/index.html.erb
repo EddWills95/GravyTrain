@@ -1,0 +1,12 @@
+<% binding.pry %>
+<%= link_to 'How it works', help_path %>
+
+<% @offerings.each do |offering| %>
+  <%= offering.title %>
+  <%= offering.price %>
+  <%= offering.duration %>
+  <%= offering.img_url %>
+  <%= offering.company_name %>
+  <%= offering.location %>
+<% end %>
+<%= button_to 'Find out more!', find_out_more_path %>
