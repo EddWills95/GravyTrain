@@ -1,0 +1,13 @@
+<h1>Pages#index</h1>
+<p><% @offerings.each do | offering | %>
+  <%= offering.name %>
+  <%= offering.price %>
+  <%= offering.duration %>
+  <%= offering.img_url %>
+  <%= offering.company_name %>
+  <%= offering.location %>
+  <%= link_to "find out more", offering_path(offering) %>
+  <% end %>
+
+
+</p>
