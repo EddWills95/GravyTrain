@@ -6,13 +6,13 @@ Given(/^there are blog posts$/) do
 end
 
 When(/^they click on the blog button$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  click_on 'Blog'
 end
 
 Then(/^they will be sent to the blog page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit(posts_path)
 end
 
 Then(/^they see blog posts$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  assert page.has_content?(@content)
 end

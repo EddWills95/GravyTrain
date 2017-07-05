@@ -1,0 +1,10 @@
+<h1>BLOG</h1>
+<main>
+  <section>
+    <% @posts.each do | post | %>
+      <%= post.title %>
+      <%= post.img_url %>
+      <%= post.content %>
+      <% end %>
+  </section>
+</main>
