@@ -18,11 +18,21 @@ When(/^they register$/) do
   click_on 'Sign up'
 end
 
-Then(/^they have a new account$/) do
+When(/^they click on Wait I'm a Provider$/) do
+ save_and_open_page
+  click_on 'Wait, I\'m a Provider'
+end
+
+Then(/^they have a new buyer account$/) do
   assert_equal Buyer.count, 1
 end
 
-Then(/^they get set to the homepage$/) do
+Then(/^they have a new provider account$/) do
+  assert_equal Buyer.count, 1
+  assert_equal Buyer.first.type, "Provider"
+end
+
+Then(/^they get sent to the homepage$/) do
   assert page.has_current_path? '/'
 end
 

@@ -1,0 +1,3 @@
+class Provider < Buyer
+  
+end
