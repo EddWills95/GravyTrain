@@ -1,0 +1,12 @@
+.main-nav {
+  ul {
+    display: inline-block;
+    li {
+      display: inline-block;
+      & a:link {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}

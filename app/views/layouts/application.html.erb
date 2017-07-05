@@ -12,8 +12,11 @@
     <header>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-      <nav>
+      <nav class="main-nav">
         <ul>
+          <li><%= link_to "Blog" %></li>
+          <li><%= link_to "How it Works" %></li>
+          <li><%= link_to "Register", new_buyer_registration_path, options = { method: :get } %></li>
           <li><%=link_to "Logout", destroy_buyer_session_path, options = { method: :delete } %></li>
         </ul>
       </nav>
