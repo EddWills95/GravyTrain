@@ -3,7 +3,7 @@
   <section>
     <% @posts.each do | post | %>
       <%= post.title %>
-      <%= post.img_url %>
+      <img src="<%= post.img_url %>"></img>
       <%= post.content %>
       <% end %>
   </section>
