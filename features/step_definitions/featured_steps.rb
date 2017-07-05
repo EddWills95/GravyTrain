@@ -1,5 +1,6 @@
 Given(/^there are some featured offers$/) do
-  Offering.create!(name: "sushi making", price: 15000, duration: 3, img_url: "sushi.jpg", company_name: "Sushi Company", location: "central london", featured: true)
+  @sushi = Offering.create!(name: "sushi making", price: 15000, duration: 3, img_url: "sushi.jpg", company_name: "Sushi Company", location: "central london", featured: true)
+  @karate = Offering.create!(name: "Karate", price: 48000, duration: 2, img_url: "karate.jpg", company_name: "SMK", location: "Birmingham", featured: true)
 end
 
 Given(/^there are some non\-featured offers$/) do
@@ -38,7 +39,7 @@ Then(/^they don't see non\-featured offers$/) do
 end
 
 When(/^they click on an offer$/) do
-  click_on('find out more')
+  click_on("find out more/#{@sushi.id}")
 end
 
 Then(/^they see more information for that offer$/) do

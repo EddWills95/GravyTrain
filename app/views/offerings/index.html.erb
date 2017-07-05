@@ -1,0 +1,20 @@
+<h1>Featured Offers</h1>
+
+<aside>
+  <%= form_tag(offerings_path, method: "get") do %>
+    <%= label_tag(:category, "Category") %>
+    <%= collection_select(params[:category], :category_id, Category.all, :id, :name) %>
+    <%= submit_tag("Filter") %>
+  <% end %>
+</aside>
+
+<% @offerings.each do |offering| %>
+  <div class="offering">
+    <h2><%= offering.name %></h2>
+    <%= offering.price %>
+    <%= offering.duration %>
+    <%= offering.img_url %>
+    <%= offering.company_name %>
+    <%= offering.location %>
+  </div>
+<% end %>

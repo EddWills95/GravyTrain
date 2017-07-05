@@ -6,7 +6,7 @@
   <%= offering.img_url %>
   <%= offering.company_name %>
   <%= offering.location %>
-  <%= link_to "find out more", offering_path(offering) %>
+  <%= link_to "find out more/#{offering.id}", offering_path(offering) %>
   <% end %>
 
 

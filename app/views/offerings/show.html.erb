@@ -1,5 +1,4 @@
 <h1>Information about <%= @offering.name %></h1>
-<% unless @offering.discounts.nil? %>
-<h2>Book <%=@offering.discounts.num_people %> or more and get <%= @offering.discounts.first.percentage %> off</h2>
-<p>Find me in app/views/offerings/show.html.erb</p>
+<% if @offering.discounts.any?%>
+<h2>Book <%=@offering.discounts.first.num_people %> or more and get <%= @offering.discounts.first.percentage %> off</h2>
 <% end %>

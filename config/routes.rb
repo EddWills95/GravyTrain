@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'offerings/show'
 
   root 'pages#index'
-  resources :offerings 
+  resources :offerings, :only => [:index, :show]
 
 end
