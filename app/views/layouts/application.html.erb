@@ -12,6 +12,11 @@
     <header>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
+      <nav>
+        <ul>
+          <li><%=link_to "Logout", destroy_buyer_session_path, options = { method: :delete } %></li>
+        </ul>
+      </nav>
     </header>
     <%= yield %>
   </body>

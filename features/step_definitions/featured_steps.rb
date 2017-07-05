@@ -14,7 +14,7 @@ Given(/^there is a discount for that offer$/) do
 end
 
 When(/^they are on the homepage$/) do
-  visit('/')
+  visit(root_path)
 end
 
 Then(/^they see featured offers$/) do
