@@ -9,5 +9,8 @@ class OfferingsController < ApplicationController
     unless params[:category_id].blank?
       @offerings = @offerings.where(category_id: params[:category_id])
     end
+    unless params[:price].blank?
+      @offerings = @offerings.where("price <= ?", params[:price])
+    end
   end
 end

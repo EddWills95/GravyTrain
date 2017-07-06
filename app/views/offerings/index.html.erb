@@ -2,8 +2,13 @@
 
 <aside>
   <%= form_tag(offerings_path, method: "get") do %>
+    
     <%= label_tag(:category, "Category") %>
     <%= collection_select(params[:category], :category_id, Category.all, :id, :name) %>
+
+    <%= label_tag(:price, "Price") %>
+    <%= number_field_tag('price') %>
+
     <%= submit_tag("Filter") %>
   <% end %>
 </aside>

@@ -29,3 +29,19 @@ end
 Then(/^they don't see the sports offerings$/) do
   refute(page.has_content?(@karate.name))
 end
+
+
+When(/^they filter by price$/) do
+  fill_in "price", :with => 30000
+  click_on "Filter"
+end
+
+Then(/^they see the correct offerings$/) do
+  assert(page.has_content?(@sushi.name))
+end
+
+Then(/^they don't see expensive offerings$/) do
+  refute(page.has_content?(@karate.name))
+end
+
+

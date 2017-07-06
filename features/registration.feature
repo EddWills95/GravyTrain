@@ -11,7 +11,7 @@ Feature: User registration
       And they get sent to the homepage
       And they see a message welcoming them into the Gravy Train
       And they receive an email asking them to confirm their email address
-  @wip
+
   Scenario: A provider registers
     Given they completed the buyer registration form
     When they click on Wait I'm a Provider
