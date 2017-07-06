@@ -23,13 +23,9 @@
 
   <div class="actions">
     <%= f.submit "Sign up" %>
+    <%= f.submit "Wait, I'm a Provider" %>
   </div>
 
-<% end %>
-<% if resource_name == :buyer %>
-  <%= link_to "Wait, I'm a Provider", new_provider_registration_path %>
-<% else %>
-  <%= link_to "Wait, I'm a Buyer", new_buyer_registration_path %>
 <% end %>
 
 <%= render "devise/shared/links" %>

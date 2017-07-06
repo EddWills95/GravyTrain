@@ -19,7 +19,6 @@ When(/^they register$/) do
 end
 
 When(/^they click on Wait I'm a Provider$/) do
- save_and_open_page
   click_on 'Wait, I\'m a Provider'
 end
 
@@ -28,16 +27,24 @@ Then(/^they have a new buyer account$/) do
 end
 
 Then(/^they have a new provider account$/) do
-  assert_equal Buyer.count, 1
-  assert_equal Buyer.first.type, "Provider"
+  assert_equal Provider.count, 1
 end
 
 Then(/^they get sent to the homepage$/) do
   assert page.has_current_path? '/'
 end
 
+Given(/^they completed the buyer registration form$/) do
+  step 'they enter their email'
+  step 'they enter their password'
+  step 'they confirm their password'
+end
+
+When(/^they fill in the extra provider fields$/) do
+  fill_in 'Organisation Name', :with => Faker::Company.name
+end
+
 Then(/^they see a message welcoming them into the Gravy Train$/) do
-  # save_and_open_page
   assert page.has_content?("Welcome to the Gravy Train")
 end
 

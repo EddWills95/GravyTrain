@@ -7,4 +7,4 @@ Feature: User sign in
       And they fill in their password
       And they click the sign in button
     Then they are signed in
-    And they are on the homepage
+      And they are on the homepage
