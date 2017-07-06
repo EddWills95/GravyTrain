@@ -1,6 +1,5 @@
 Feature: filtering offerings
   
-  
   Scenario: A guest filters by category
     Given there are some featured offers
       And there are some offerings in the food category
@@ -11,7 +10,7 @@ Feature: filtering offerings
     Then they see the food offerings
       And they don't see the sports offerings
 
-  @wip
+  
   Scenario: A guest filters by price
     Given there are some featured offers
       And there are some offerings in the food category

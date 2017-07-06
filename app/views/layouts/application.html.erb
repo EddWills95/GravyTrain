@@ -16,11 +16,20 @@
         <ul>
           <li><%= link_to "Blog" %></li>
           <li><%= link_to "How it Works" %></li>
-          <li><%= link_to "Register", new_buyer_registration_path, options = { method: :get } %></li>
+          <li>
+            <%= if buyer_signed_in?
+                  link_to "Account", edit_buyer_registration_path  
+                else
+                  link_to "Register", new_buyer_registration_path, options = { method: :get } 
+                end %>
+
+
+          </li>
           <li><%=link_to "Logout", destroy_buyer_session_path, options = { method: :delete } %></li>
         </ul>
       </nav>
     </header>
+
     <%= yield %>
   </body>
 </html>

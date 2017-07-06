@@ -27,6 +27,7 @@ Then(/^they see the food offerings$/) do
 end
 
 Then(/^they don't see the sports offerings$/) do
+  save_and_open_page
   refute(page.has_content?(@karate.name))
 end
 
