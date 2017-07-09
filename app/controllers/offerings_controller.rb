@@ -13,4 +13,13 @@ class OfferingsController < ApplicationController
       @offerings = @offerings.where("price <= ?", params[:price])
     end
   end
+
+  def new
+     @offering = Offering.new
+  end
+
+  def create 
+    binding.pry
+  end
+
 end

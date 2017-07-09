@@ -1,0 +1,12 @@
+<h2>New Offering</h2>
+
+<%= form_for(@offering, url: {action: "create"}) do |f| %>
+
+	<%= hidden_field_tag :provider_id, current_buyer.id %>
+
+
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.submit "Submit" %>
+<% end %>

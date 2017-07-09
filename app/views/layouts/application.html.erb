@@ -17,8 +17,11 @@
           <li><%= link_to "Blog" %></li>
           <li><%= link_to "How it Works" %></li>
           <li>
+
+
+
             <%= if buyer_signed_in?
-                  link_to "Account", edit_buyer_registration_path  
+                  link_to("Account", buyer_path(current_buyer.id))
                 else
                   link_to "Register", new_buyer_registration_path, options = { method: :get } 
                 end %>
